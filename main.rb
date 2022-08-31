@@ -1,4 +1,4 @@
-require "subprocess"
+require "fileutils"
 require "dir"
 require "os"
 require "securerandom"
@@ -11,8 +11,8 @@ count = 0
 while true
     name = SecureRandom.hex
     Sleep(1)
-    
-
+    FileUtils.mkdir(
+    count += 1
 
 for dir in cwd
     #
