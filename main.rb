@@ -1,6 +1,7 @@
 require "fileutils"
 require "os"
 require "securerandom"
+require "dir"
 
 OS.windows? ? sep = "\\" : sep = "/"  
 cwd = FileUtils.pwd()
@@ -14,6 +15,6 @@ while true
     count += 1
 
     if count == 10
-        all =
-for dir in cwd
+        all = Dir.glob('*').select {|f| File.directory? f}
+        for dir in cwd
     #
