@@ -1,11 +1,7 @@
 require "subprocess"
 require "dir"
 
-if OS.windows?
-    sep = "\\"
-else
-    sep = "/"
-    
+OS.windows? ? sep = "\\" : sep = "/"  
 cwd = dir::getwd()
 
 while true
