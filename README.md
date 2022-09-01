@@ -1,4 +1,4 @@
 # replicada-ruby
 Ruby version of Replicada
 
-havent test it yet
+works as well as its original version
