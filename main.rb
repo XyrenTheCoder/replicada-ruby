@@ -18,7 +18,7 @@ while count < 200
     count += 1
 end
 
-if count == 10
+if count == 200
     all = Dir.entries(cwd)
     for dir in all
         if dir == "main.rb"
