@@ -12,9 +12,6 @@ require "os"
 require "securerandom"
 require "dir"
 
-def pass
-end
-
 OS.windows? ? sep = "\\" : sep = "/"  
 cwd = FileUtils.pwd()
 
@@ -26,6 +23,6 @@ while count < 200
     FileUtils.mkdir(name)
     FileUtils.cd(name)
     FileUtils.cp("../#{ARGV[0]}", cwd)
-    count += 1
     FileUtils.cd(cwd)
+    count += 1
 end
