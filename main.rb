@@ -19,7 +19,7 @@ while count < 200
 end
 
 if count == 10
-    all = Dir.glob('*').select {|f| File.directory? f}
+    all = Dir.entries(cwd)
     for dir in all
         if dir == "main.rb"
             pass
