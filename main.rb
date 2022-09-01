@@ -19,12 +19,3 @@ while count < 200
     FileUtils.cp("../#{ARGV[0]}", cwd)
     count += 1
 end
-
-if count == 200
-    all = Dir.entries(cwd)
-    for dir in all
-        if dir == "main.rb"
-            pass
-        else
-            sleep(1)
-            FileUtils.cp("#{
