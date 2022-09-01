@@ -1,7 +1,7 @@
 # replicada-ruby
 Replicada is a self-replicating file written in Python but recreated in Ruby, running it will mess up your directory.
 
-watch [this](https://youtu.be/OF-MyzlaXW4) video to see what it looks like to be ran.
+watch [this](https://youtu.be/OF-MyzlaXW4) video to see how it looks like to be ran.
 
 ## warnings
 
