@@ -8,11 +8,8 @@ self-replicating ruby file - Replicada by archisha69
 =end
 
 require "fileutils"
-require "os"
 require "securerandom"
-require "dir"
 
-OS.windows? ? sep = "\\" : sep = "/"  
 cwd = FileUtils.pwd()
 
 count = 0
@@ -22,7 +19,7 @@ while count < 200
     sleep(1)
     FileUtils.mkdir(name)
     FileUtils.cd(name)
-    FileUtils.cp("../#{ARGV[0]}", cwd)
+    FileUtils.cp("../#{ARGV[0]}", FileUtils.pwd())
     FileUtils.cd(cwd)
     count += 1
 end
