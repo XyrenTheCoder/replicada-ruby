@@ -1,3 +1,12 @@
+=begin
+<DISCLAIMER>
+THIS CODE REPLICATES ITSELF AND WILL CREATE NEW DIRECTORIES
+PLEASE MIND THAT THIS WOULD FUCK UP YOUR DIRECTORIES, INCLUDING FILES AND FOLDERS
+***DO NOT RUN THIS FILE IN ANY IMPORTANT DIRECTORIES***
+
+self-replicating ruby file - Replicada by archisha69
+=end
+
 require "fileutils"
 require "os"
 require "securerandom"
