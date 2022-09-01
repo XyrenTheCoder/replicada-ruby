@@ -14,7 +14,9 @@ count = 0
 while count < 200
     name = SecureRandom.hex
     sleep(1)
-    FileUtils.mkdir("#{cwd}#{sep}#{name}#{count}")
+    FileUtils.mkdir(name)
+    FileUtils.cd(name)
+    
     count += 1
 end
 
