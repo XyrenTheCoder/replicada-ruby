@@ -13,7 +13,7 @@ count = 0
 
 while true
     name = SecureRandom.hex
-    Sleep(1)
+    sleep(1)
     FileUtils.mkdir("#{cwd}#{sep}#{name}#{count}")
     count += 1
 end
@@ -24,7 +24,7 @@ if count == 10
         if dir == "main.rb"
             pass
         else
-            Sleep(1)
+            sleep(1)
             FileUtils.copy_file("#{cwd}#{sep}main.rb, #{dir}")
         end
     end
