@@ -25,7 +25,7 @@ if count == 10
             pass
         else
             sleep(1)
-            FileUtils.copy_file("#{cwd}#{sep}main.rb, #{dir}")
+            FileUtils.cp("#{cwd}#{sep}main.rb", "#{dir}")
         end
     end
 end
