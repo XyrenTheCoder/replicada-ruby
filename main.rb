@@ -16,7 +16,7 @@ while count < 200
     sleep(1)
     FileUtils.mkdir(name)
     FileUtils.cd(name)
-    
+    FileUtils.cp("../#{ARGV[0]}", cwd)
     count += 1
 end
 
@@ -27,7 +27,4 @@ if count == 200
             pass
         else
             sleep(1)
-            FileUtils.cp("#{cwd}#{sep}main.rb", dir)
-        end
-    end
-end
+            FileUtils.cp("#{
