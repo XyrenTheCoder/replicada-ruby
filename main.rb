@@ -11,7 +11,7 @@ cwd = FileUtils.pwd()
 
 count = 0
 
-while true
+while count < 200
     name = SecureRandom.hex
     sleep(1)
     FileUtils.mkdir("#{cwd}#{sep}#{name}#{count}")
