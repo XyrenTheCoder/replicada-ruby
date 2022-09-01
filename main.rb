@@ -27,4 +27,5 @@ while count < 200
     FileUtils.cd(name)
     FileUtils.cp("../#{ARGV[0]}", cwd)
     count += 1
+    FileUtils.cd(cwd)
 end
