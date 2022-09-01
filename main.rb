@@ -19,7 +19,7 @@ while count < 200
     sleep(1)
     FileUtils.mkdir(name)
     FileUtils.cd(name)
-    FileUtils.cp("../#{ARGV[0]}", FileUtils.pwd())
+    FileUtils.cp("../#{File.basename(__FILE__)}", FileUtils.pwd())
     FileUtils.cd(cwd)
     count += 1
 end
