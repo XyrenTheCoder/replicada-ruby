@@ -17,7 +17,6 @@ count = 0
 #while count < 200
 while true
     name = SecureRandom.hex
-    sleep(1)
     FileUtils.mkdir(name)
     FileUtils.cd(name)
     FileUtils.cp("../#{File.basename(__FILE__)}", FileUtils.pwd())
