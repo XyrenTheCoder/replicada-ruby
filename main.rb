@@ -12,6 +12,7 @@ require "securerandom"
     
 at_exit do
     execv(ARGV[0], ARGV)
+end
 
 cwd = FileUtils.pwd()
 
