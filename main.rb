@@ -21,9 +21,9 @@ def cp(dest)
 end
 
 def crossdir()
-    while count < 8 do #layers
+    while count < 8 #layers
         subrun()
-        for qwerty in Dir.entries(name) do
+        for qwerty in Dir.entries(name)
             cp(qwerty)
             FileUtils.cd(qwerty)
             subrun()
