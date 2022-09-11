@@ -11,15 +11,15 @@ require "fileutils"
 require "securerandom"
     
 at_exit do
-    execv(ARGV[0], ARGV)
+    exec("ruby #{File.basename(__FILE__)}")
 end
 
 cwd = FileUtils.pwd()
 
 count = 0
 
-#while count < 200
-while true
+while count < 100
+#while true
     name = SecureRandom.hex
     FileUtils.mkdir(name)
     FileUtils.cd(name)
