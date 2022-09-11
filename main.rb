@@ -46,7 +46,7 @@ while count < 100
     FileUtils.cd(name)
     FileUtils.cp("../#{File.basename(__FILE__)}", FileUtils.pwd())
     t = Thread.new {
-        crossdir()
+        crossdir() #unknown reason on NameError: undefined variable or method "crossdir"
     }
     t.join
     FileUtils.cd(cwd)
