@@ -3,6 +3,10 @@ Replicada is a self-replicating file written in Python but recreated in Ruby, ru
 
 watch [this](https://youtu.be/OF-MyzlaXW4) video to see how it looks like to be executed.
 
+## requirements
+
+- you must install module "dir" manually because idk why it wont auto import for you
+
 ## warnings
 
 - this file may cause damage to your cwd (current working directory)
