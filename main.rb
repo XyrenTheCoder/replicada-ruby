@@ -21,9 +21,9 @@ def cp(dest)
 end
 
 def crossdir()
-    while count < 8 #layers
+    while $count < 8 do #layers
         subrun()
-        for qwerty in Dir.entries(name)
+        for qwerty in Dir.entries(name) do
             cp(qwerty)
             FileUtils.cd(qwerty)
             subrun()
@@ -37,18 +37,19 @@ end
 
 cwd = FileUtils.pwd()
 
-count = 0
+$count = 0
 
-while count < 100
+while $count < 100
 #while true
     name = SecureRandom.hex
     FileUtils.mkdir(name)
     FileUtils.cd(name)
     FileUtils.cp("../#{File.basename(__FILE__)}", FileUtils.pwd())
-    t = Thread.new {
-        crossdir() #unknown reason on NameError: undefined variable or method "crossdir"
+    t = Thread.new {crossdir()}
+    t2 = Thread.new {
+        FileUtils.cd(cwd)
+        $count += 1
     }
-    t.join
-    FileUtils.cd(cwd)
-    count += 1
+    threads = [t, t2]
+    threads.join
 end
